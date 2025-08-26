@@ -1,9 +1,9 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { Toggle } from "@/components/ui/toggle";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/contexts/AuthContext";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function Navbar() {
   const { user, signOut, loading } = useAuth();
@@ -19,7 +19,7 @@ export default function Navbar() {
     <header className="flex items-center justify-between py-4">
       <Link href="/" className="font-semibold text-xl">Fitaura</Link>
       <div className="flex items-center gap-2">
-        <Toggle />
+        <ThemeToggle />
         {!loading && (
           <>
             {user ? (
